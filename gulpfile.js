@@ -1,8 +1,4 @@
-/**
- * Created by sloong on 2016/6/14.
- */
 'use strict';
-
 var gulp = require('gulp');
 var webpack = require('webpack');
 

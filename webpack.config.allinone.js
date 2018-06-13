@@ -143,8 +143,7 @@ module.exports = function(options){
                     test: /\.((woff2?|svg)(\?v=[0-9]\.[0-9]\.[0-9]))|(woff2?|svg|jpe?g|png|gif|ico)$/,
                     use: [
                         //小于10KB的图片会自动转成dataUrl，
-                        'url-loader?limit=10000&name=img/[hash:8].[name].[ext]',
-                        // 'image-webpack-loader?{bypassOnDebug:true, progressive:true,optimizationLevel:3,pngquant:{quality:"65-80",speed:4}}'
+                        'url-loader?limit=10000&name=img/[hash:8].[name].[ext]'
                     ]
                 },
                 {

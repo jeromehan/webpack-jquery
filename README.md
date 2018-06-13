@@ -17,11 +17,11 @@
 
 ## 拷贝项目模板 ##
 
-    $ git clone https://github.com/ifengkou/webpack-template.git
+    $ git clone https://github.com/jeromehan/webpack-jquery.git
 
 ## 安装依赖 ##
 
-  $ cd webpack-template
+  $ cd webpack-jQuery
 	$ npm install
 
 ## 目录结构 ##

@@ -15,6 +15,7 @@ var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin
+var cleanWebpackPlugin = require('clean-webpack-plugin');
 
 //入口文件定义
 var entries = function () {
@@ -103,6 +104,9 @@ module.exports = function(options){
          })
         plugins.push(
             extractCSS,
+            new cleanWebpackPlugin(['dist/*'], {
+              root: path.resolve(__dirname, '/')
+            }),
             new UglifyJsPlugin({
               uglifyOptions:{
                 compress: {

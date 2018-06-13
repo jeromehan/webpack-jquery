@@ -24,14 +24,13 @@ online demo https://jeromehan.github.io/webpack-jquery/dist/
 
 ## 安装依赖 ##
 
-  $ cd webpack-jQuery
+  $ cd webpack-jquery
 	$ npm install
 
 ## 目录结构 ##
 
 ``` js
     .
-    ├── gulpfile.js               # gulp任务配置
     ├── package.json              # 项目配置
     ├── README.md                 # 项目说明
     ├── src                       # 源码目录
@@ -62,19 +61,3 @@ online demo https://jeromehan.github.io/webpack-jquery/dist/
 生产环境会对js混淆压缩，对css、html进行压缩，字符替换等处理
 
     $ npm run build
-
-## 部署发布 ##
-
-在gulpfile.js 中配置好localServer和remoteServer，编译后将dist目录发布到服务端
-
-发布到localServer
-
-    $ npm run deploy
-
-发布到remoteServer
-
-    $ npm run deploy-online
-
-## 本地调试 ##
-
-    $ npm run dev

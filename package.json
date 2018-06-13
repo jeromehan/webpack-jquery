@@ -1,0 +1,43 @@
+{
+  "name": "webpack-template",
+  "version": "2.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --inline --port 8081",
+    "build": "gulp pack --env production",
+    "deploy": "gulp deploy --env debug",
+    "deploy-online": "gulp deploy --env production"
+  },
+  "author": "jeromehan",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer-loader": "^3.2.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^0.21.0",
+    "ejs-loader": "^0.3.0",
+    "extract-text-webpack-plugin": "^2.0.0",
+    "file-loader": "^0.8.5",
+    "glob": "^6.0.4",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-jshint": "^2.0.1",
+    "gulp-sftp": "^0.1.5",
+    "gulp-util": "^3.0.7",
+    "html-loader": "^0.4.5",
+    "html-webpack-plugin": "^2.19.0",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.2.0",
+    "jsx-loader": "^0.13.2",
+    "minimist": "^1.2.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^3.2.0",
+    "style-loader": "^0.13.0",
+    "url-loader": "^1.0.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.1.4"
+  }
+}

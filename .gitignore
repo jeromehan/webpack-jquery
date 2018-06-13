@@ -7,8 +7,6 @@ npm-debug.log
 .naeindex
 coverage.html
 .monitor
-
-dist/
 *.min.*.js
 *.min.*.css
 assets.json

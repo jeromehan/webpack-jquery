@@ -1,5 +1,6 @@
 # webpack-jQuery #
-    online demo https://jeromehan.github.io/webpack-jquery/dist/
+
+online demo https://jeromehan.github.io/webpack-jquery/dist/
 
 基于webpack搭建纯静态页面型前端工程解决方案模板
 - 按需加载模块，按需进行懒加载，在实际用到某些模块的时候再增量更新

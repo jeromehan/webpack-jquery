@@ -1,2 +1,2 @@
 var $ = require("jquery");
-$('.b_v').css('color','yellow')
+$('.b_v').css('color','yellow');

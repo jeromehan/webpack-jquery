@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --content-base ./ --open --inline --hot --compress --config ./webpack-dev.config.js",
-    "build": "webpack --progress --hide-modules --config ./webpack.config.js",
-    "deploy": "gulp deploy --env debug",
-    "deploy-online": "gulp deploy --env production"
+    "build": "webpack --progress --hide-modules --config ./webpack.config.js"
   },
   "author": "jeromehan",
   "license": "MIT",
@@ -23,11 +21,6 @@
     "extract-text-webpack-plugin": "^2.0.0",
     "file-loader": "^0.8.5",
     "glob": "^6.0.4",
-    "gulp": "^3.9.1",
-    "gulp-clean": "^0.3.2",
-    "gulp-jshint": "^2.0.1",
-    "gulp-sftp": "^0.1.5",
-    "gulp-util": "^3.0.7",
     "html-loader": "^0.4.5",
     "html-webpack-plugin": "^2.19.0",
     "jshint": "^2.9.2",

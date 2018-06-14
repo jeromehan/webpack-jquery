@@ -16,6 +16,7 @@ assets.json
 
 # Ignore Windows desktop setting file
 desktop.ini
+dist
 *.log
 *.csv
 *.dat

@@ -8,7 +8,7 @@ var glob = require('glob')
 var srcDir = path.resolve(process.cwd(), 'src');
 var distDir = path.resolve(process.cwd(), 'dist');
 var nodeModPath = path.resolve(__dirname, './node_modules');
-var publicPath = '/webpack-jquery/dist/';//发布到服务器的文件夹
+var publicPath = '/';//发布到服务器的文件夹
 //插件定义
 var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 var HtmlWebpackPlugin = require('html-webpack-plugin');

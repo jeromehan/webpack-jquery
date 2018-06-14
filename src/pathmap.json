@@ -1,5 +1,0 @@
-{
-  "zepto": "js/lib/zepto.js",
-  "jquery": "js/lib/jquery-1.12.4.js",
-  "commonCss":"css/common.css"
-}

@@ -8,8 +8,7 @@ var glob = require('glob')
 var srcDir = path.resolve(process.cwd(), 'src');
 var distDir = path.resolve(process.cwd(), 'dist');
 var nodeModPath = path.resolve(__dirname, './node_modules');
-var pathMap = require('./src/pathmap.json');
-var publicPath = '/';//发布到服务器的文件夹
+var publicPath = '/webpack-jquery/dist/';//发布到服务器的文件夹
 //插件定义
 var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 var HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -178,7 +177,12 @@ module.exports = function(options){
         resolve: {
             extensions: ['.js', '.css', '.scss', '.tpl', '.png', '.jpg'],
             modules:[srcDir, nodeModPath],
-            alias: pathMap
+            alias:{
+              "zepto": "js/lib/zepto.js",
+              "jquery": "js/lib/jquery-1.12.4.js",
+              "commonCss":"css/common.css",
+              '@':path.join(__dirname,'src')
+            }
         },
         plugins: plugins.concat(html_plugins())
     }

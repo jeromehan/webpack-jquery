@@ -65,10 +65,14 @@ module.exports = function(options){
     plugins.push(new CommonsChunkPlugin({
         name: 'vendor',
         minChunks: Infinity
-    }));
+    }),
+    new webpack.ProvidePlugin({
+        _: "js/lib/loadsh.js"
+    })
+  );
 
     if(debug){
-        extractCSS = new ExtractTextPlugin({filename:'css/[name].css',allChunks: true})
+        extractCSS = new ExtractTextPlugin({filename:'css/[name].[contenthash].css',allChunks: true})
         cssLoader = extractCSS.extract({use:['css-loader','autoprefixer-loader']})
         sassLoader = extractCSS.extract({use:['css-loader','autoprefixer-loader','sass-loader']})
         plugins.push(extractCSS)
@@ -115,7 +119,7 @@ module.exports = function(options){
                     comments: false
                 },
                 mangle: {
-                    except: ['$', 'exports', 'require']
+                    except: ['$','_','exports', 'require']
                 }
               }
             }),
@@ -127,11 +131,11 @@ module.exports = function(options){
     var config = {
         entry: Object.assign(entries(), {
             // 用到什么公共lib（例如jquery.js），就把它加进vendor去，目的是将公用库单独提取打包
-            'vendor': ['jquery']
+            'vendor': ['jquery','_']
         }),
         output: {
             path: path.join(__dirname, "dist"),
-            filename: "js/[name].[hash:7].js",
+            filename: "js/[name].[hash].js",
             chunkFilename: '[chunkhash:8].chunk.js',
             publicPath: publicPath
         },
@@ -155,31 +159,17 @@ module.exports = function(options){
                 },
                 {test: /\.(tpl|ejs)$/,use: 'ejs-loader'},
                 {test: /\.css$/,use:cssLoader},
-                {test:/\.scss$/,use:sassLoader},
-                // {test: /\.css$/,use:ExtractTextPlugin.extract({use:['css-loader']})},
-                // {test: /\.scss$/,use:ExtractTextPlugin.extract({use:[{
-                //         loader: 'css-loader',
-                //         // options: {
-                //         //     // If you are having trouble with urls not resolving add this setting.
-                //         //     // See https://github.com/webpack-contrib/css-loader#url
-                //         //     url: false,
-                //         //     minimize: true,
-                //         // }
-                //     },
-                //     'sass-loader']
-                //  })},
-              // {
-              //   test: /\.html$/,
-              //   use: 'html-loader',
-              // }
+                {test:/\.scss$/,use:sassLoader}
             ]
         },
         resolve: {
             extensions: ['.js', '.css', '.scss', '.tpl', '.png', '.jpg'],
             modules:[srcDir, nodeModPath],
             alias:{
+              "_":"js/lib/loadsh.js",
               "zepto": "js/lib/zepto.js",
               "jquery": "js/lib/jquery-1.12.4.js",
+              'common':'js/lib/common.js',
               "commonCss":"css/common.css",
               '@':path.join(__dirname,'src')
             }
